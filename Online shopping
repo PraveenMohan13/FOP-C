@@ -1,0 +1,73 @@
+Richard Castle wants to buy a shirt. As he is very lazy, he decided to buy the shirt online. He chooses a shirt on Flipkart and is surprised to see the same shirt on Snapdeal, and Amazon as well. So he decided to buy the shirt from the website which offers the least price. The price of the shirt, the discount percentage, and the shipping charges of all three websites have been given as input. Help him in calculating the price of the shirt on each website and decide which website has the lowest price.If the price in all the three websites are same then first priority goes to Flipkart, then Snapdeal and finally Amazon.
+
+Input Format
+
+Input consists of 9 integers. The first three input corresponds to Flipkart details such as the price of the shirt, discount offered, and shipping charges. The next three input corresponds to Snapdeal details such as the price of the shirt, discount offered, and shipping charge. The last three input corresponds to Amazon details such as the price of the shirt, discount offered, and shipping charge.
+
+Constraints
+
+NA
+
+Output Format
+
+The Output consists of three integers that denote the prices on Flipkart, Snapdeal, and Amazon and should suggest the website that has the lowest price.
+
+Sample Input 0
+
+1000
+50
+50
+900
+50
+70
+800
+10
+200
+Sample Output 0
+
+In Flipkart: Rs.550
+In Snapdeal: Rs.520
+In Amazon: Rs.920
+Choose Snapdeal
+Sample Input 1
+
+1000
+60
+80
+900
+50
+30
+1000
+10
+200
+Sample Output 1
+
+In Flipkart: Rs.480
+In Snapdeal: Rs.480
+In Amazon: Rs.1100
+Choose Flipkart
+==============================================================
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int fp,fd,fs,sp,sd,ss,ap,ad,as;
+    scanf("%d%d%d%d%d%d%d%d%d",&fp,&fd,&fs,&sp,&sd,&ss,&ap,&ad,&as);
+    int fans=fp-(fp*fd/100.0)+fs;
+    int sans=sp-(sp*sd/100.0)+ss;
+    int aans=ap-(ap*ad/100.0)+as;
+    printf("In Flipkart: Rs.%d\n",fans);
+    printf("In Snapdeal: Rs.%d\n",sans);
+    printf("In Amazon: Rs.%d\n",aans);
+    if((fans<=aans)&&(fans<=sans))
+        printf("Choose Flipkart");
+    else if(sans<=fans&&sans<=aans)
+        printf("Choose Snapdeal");
+    else
+        printf("Choose Amazon");
+    
+       
+    return 0;
+}
