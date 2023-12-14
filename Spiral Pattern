@@ -1,0 +1,84 @@
+Given an integer matrix of size n*n. n is the number of rows and columns. Traverse it in a spiral form.
+
+Input Format
+
+The first line contains N, which represents the number of rows and columns of a matrix.
+The next N lines contain N values, each representing the values of the matrix.
+Constraints
+
+NA
+
+Output Format
+
+A single line containing integers with space represents the desired traversal.
+
+Sample Input 0
+
+3 
+1 2 3
+4 5 6
+7 8 9
+Sample Output 0
+
+1 2 3 6 9 8 7 4 5
+Sample Input 1
+
+4 
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+Sample Output 1
+
+1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10
+============================================================================
+void fun(int n,int a[][n])
+{
+    int T=0,D=n-1,R=n-1,L=0,dir=0,i;
+    
+    while(T<=D && L<=R)
+    {
+        if(dir==0)//Top
+        {
+            for(i=L;i<=R;i++)
+                printf("%d ",a[T][i]);
+            T++;
+        }
+        else if(dir==1)//Right
+        {
+            for(i=T;i<=D;i++)
+                printf("%d ",a[i][R]);
+            R--;
+        }
+        else if(dir==2)//Down
+        {
+            for(i=R;i>=L;i--)
+            {
+                printf("%d ",a[D][i]);
+            }
+            D--;
+        }
+        else if(dir==3)//Left
+        {
+            for(i=D;i>=T;i--)
+            {
+                printf("%d ",a[i][L]);
+            }
+            L++;
+        }
+        dir=(dir+1)%4;
+    }
+}
+int main() {
+
+    int n;
+    scanf("%d",&n);
+    int a[n][n];
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+            scanf("%d",&a[i][j]);
+    }
+    fun(n,a);
+    return 0;
+}
