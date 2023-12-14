@@ -1,0 +1,30 @@
+Booka the alien
+Booka is an alien. He couldn't understand how to measure days, weeks, months and years. Make Booka understand what is meant by days, weeks, months and years. Teach him about the conversion of days into years, months and weeks using a program. INPUT FORMAT: Input consists of an integer which corresponds to the number of days. OUTPUT FORMAT: The output consists of three integers. The first integer corresponds to the total years. The second integer corresponds to the total weeks. The third integer corresponds to the total days.
+SAMPLE INPUT: 
+
+
+
+373
+
+
+
+SAMPLE OUTPUT: 
+
+
+
+1
+
+1
+
+1
+==========================================================
+#include<stdio.h>
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  int ans1=n/365;
+  int ans2=(n%365)/7;
+  int ans3=((n%365)%7);
+  printf("%d\n%d\n%d",ans1,ans2,ans3);
+}
