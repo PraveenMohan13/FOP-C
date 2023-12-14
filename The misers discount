@@ -1,0 +1,33 @@
+The misers discount
+Mrs.Bhulbhul is a miser to the core. She saves money even on petite things. One day she heard a discount offer announced in a mall. She wants to purchase a lot of items to save her money. The discount is given only when at least two items are bought. Since each item has different discount prices, she finds it difficult to check the amount she has saved. So she approaches you to device an automated discount calculator to make her easy while billing. INPUT FORMAT: Input consists of two floating point values denoting price of item1 and item2. The third input denotes the discount value in percentage. OUTPUT FORMAT: The output consists of three floating values denoting total amount, discounted price and amount saved.
+SAMPLE INPUT: 
+
+
+
+20.50
+
+45.40
+
+10 
+
+
+
+SAMPLE OUTPUT: 
+
+
+
+65.90
+
+59.31
+
+6.59 
+=========================================================================================================
+#include<stdio.h>
+int main()
+{
+  float a,b,c;
+  scanf("%f%f%f",&a,&b,&c);
+  float ans=a+b;
+  float dis=ans*c/100;
+  printf("%.2f\n%.2f\n%.2f",ans,ans-dis,dis);
+}
