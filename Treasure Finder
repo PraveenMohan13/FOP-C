@@ -1,0 +1,71 @@
+Nikitha and Danny are close friends. They both are studying in the same school. Now they are on summer vacation. As they are bored, they ask their parents to take them to an exhibition. Nikitha and Danny play a game. In this game, there are three boxes with some number written on top. There is a treasure in one of the three boxes and it is present in the box with the second largest number on top. Also, to open the box, they need to decode the correct code of this box. The clue given to them to find the code is that it is the largest number that divides all three given numbers. So, now help Nikitha and Danny to decode the code.
+
+Input Format
+
+Input consists of three integers. The first input corresponds to the number of the first box. The second input corresponds to the number of the second box. The third input corresponds to the number of the third box.
+
+Constraints
+
+NA
+
+Output Format
+
+Refer to the sample output.
+
+Sample Input 0
+
+2
+4
+6
+Sample Output 0
+
+The treasure is in the box which has the number 4
+The code to open the box is 2
+Sample Input 1
+
+7
+5
+6
+Sample Output 1
+
+The treasure is in the box which has the number 6
+The code to open the box is 1
+=======================================================================
+int min(int,int,int);
+int find(int a,int b,int c)
+{
+    for(int i=min(a,b,c);i>=1;i--)
+    {
+        if(a%i==0&&b%i==0&&c%i==0)
+            return i;
+    }
+    return 1;
+}
+int min(int a,int b,int c)
+{
+    if(a>b&&a>c)
+        return a;
+    else if(b>a&&b>c)
+        return b;
+    else
+        return c;
+}
+int max_2(int a,int b,int c)
+{
+    if((a>b&&a<c)||(a<b&&a>c))
+        return a;
+    else if((b>a&&b<c) || (b<a&&b>c))
+        return b;
+    else
+        return c;
+}
+int main() {
+
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    int ans=max_2(a,b,c);
+    int ans1=find(a,b,c);
+    printf("The treasure is in the box which has the number %d\n",ans);
+printf("The code to open the box is %d",ans1);
+    return 0;
+}
