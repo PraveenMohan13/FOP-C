@@ -55,9 +55,9 @@ Choose Flipkart
 int main() {
     int fp,fd,fs,sp,sd,ss,ap,ad,as;
     scanf("%d%d%d%d%d%d%d%d%d",&fp,&fd,&fs,&sp,&sd,&ss,&ap,&ad,&as);
-    int fans=fp-(fp*fd/100.0)+fs;
-    int sans=sp-(sp*sd/100.0)+ss;
-    int aans=ap-(ap*ad/100.0)+as;
+    int fans=fp-(fp*(fd*0.01))+fs;
+    int sans=sp-(sp*(sd*0.01))+ss;
+    int aans=ap-(ap*(ad*0.01))+as;
     printf("In Flipkart: Rs.%d\n",fans);
     printf("In Snapdeal: Rs.%d\n",sans);
     printf("In Amazon: Rs.%d\n",aans);
