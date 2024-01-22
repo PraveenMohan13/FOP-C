@@ -1,0 +1,45 @@
+Description
+
+Write a program to count the number of vowels in the given string.
+
+
+
+Input Format
+
+Input consists of 1 string.
+
+
+
+Output Format
+
+Output print the number of Vowels.
+
+
+
+Sample Input 0
+
+face 
+
+
+
+Sample Output 0
+
+Number of vowels: 2 
+
+
+========================================
+#include <stdio.h>
+int main()
+{
+   char a[20];
+  scanf("%s",&a);
+  int c=0,vc=0;
+  for(int i=0;a[i]!='\0';i++)
+  {
+    char z=a[i];
+    if(z=='a'||z=='e'||z=='i'||z=='o'||z=='u'||z=='A'||z=='E'||z=='I'||z=='O'||z=='U')
+      vc++;
+  }
+   printf("Number of vowels: %d",vc);
+   return 0;
+}
