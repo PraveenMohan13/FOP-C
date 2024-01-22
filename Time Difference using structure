@@ -1,0 +1,49 @@
+Description
+Write a program to calculate the difference between two time periods using structure.
+Input Format
+
+The first input consists of hours of time1
+The second input consists of minutes of time1
+The third input consists of seconds of time1
+The fourth input consists of hours of time2
+The fifth input consists of minutes of time2
+The sixth input consists of seconds of time2
+Note: hours, minutes, and seconds are denoted as structure variables.
+
+Output Format
+
+Refer sample output format
+
+Sample Input 0
+
+12
+
+45
+
+56
+
+2
+
+39
+
+45
+
+Sample Output 0
+
+﻿TIME DIFFERENCE: 12:45:56 - 2:39:45 = 10:6:11
+====================================
+#include <stdio.h>
+struct time
+{
+  int h1,m1,s1,h2,m2,s2;
+}t;
+int main()
+{
+  int h,m,s;
+  scanf("%d%d%d%d%d%d",&t.h1,&t.m1,&t.s1,&t.h2,&t.m2,&t.s2);
+  s=t.s1-t.s2;
+  m=t.m1-t.m2;
+  h=t.h1-t.h2;
+  printf("TIME DIFFERENCE: %d:%d:%d - %d:%d:%d = ",t.h1,t.m1,t.s1,t.h2,t.m2,t.s2);
+  printf("%d:%d:%d",h,m,s);
+}
