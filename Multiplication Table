@@ -1,0 +1,106 @@
+Multiplication Table
+
+
+
+Penny wanted to complete her graduation from the Community College of California. But being the newbee she is , she does not how to multiply two numbers. Sheldon being the good friend wanted to help Penny by writing C++ a program to print the multiplication table of an integer n.
+
+
+
+Input Format:
+
+Input consists of 2 integers. 
+
+The first integer corresponds to n. 
+
+The second integer corresponds to m(rows).
+
+
+
+Output Format:
+
+Refer to the sample output for formatting specifications.
+
+
+
+Sample Input 1:
+
+5
+
+4
+
+
+
+Sample Output 1:
+
+Enter n
+
+Enter m
+
+The multiplication table of 5 is
+
+1*5=5
+
+2*5=10
+
+3*5=15
+
+4*5=20
+
+
+
+Explanation:
+
+Multiplication of the 5th table from 1 to 4 is printed.
+
+
+
+Sample Input 2:
+
+5
+
+6
+
+
+
+Sample Output 2:
+
+Enter n
+
+Enter m
+
+The multiplication table of 5 is
+
+1*5=5
+
+2*5=10
+
+3*5=15
+
+4*5=20
+
+5*5=25
+
+6*5=30
+
+
+
+Explanation:
+
+Multiplication of the 5th table from 1 to 6 is printed.
+=========================================================================
+#include<stdio.h>
+int main()
+{
+  int n,m;
+  printf("Enter n\n");
+  scanf("%d",&n);
+  printf("Enter m\n");
+  scanf("%d",&m);
+  printf("The multiplication table of %d is\n",n);
+  int t=n;
+  for(int i=1;i<=m;i++)
+  {
+    printf("%d*%d=%d\n",i,n,t);
+    t=t+n;
+  }  
+}
