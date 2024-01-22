@@ -1,0 +1,44 @@
+Description
+
+Jaffer wanted to excel in Math. He was learning about the Kaprekar number from Meena, his Maths teacher. She gave him a few random numbers and asked him to find out whether they are Kaprekar number or not.
+
+(Consider an n-digit number k. Square it and add the right n digits to the left n or n-1 digits. If the resultant sum is k, then k is called a Kaprekar number. For example, 9 is a Kaprekar number since 9^2 = 81 & 8 + 1 = 9, similarly, 297 is a Kaprekar number as 297^2 = 88209 & 88 + 209 = 297 ).
+
+Can you help Jaffer to write a program to find whether the given number is a Kaprekar number or not?
+Input Format
+
+Input consists of a single integer.
+
+
+
+Output Format
+
+If the output is a Kaprekar number print "Kaprekar Number" else "Not a Kaprekar Number".
+
+
+
+Sample Input 0
+
+45
+
+
+
+Sample Output 0
+
+Kaprekar Number
+=====================================================
+int main() {
+    int n,temp,ans,r,q,p,fans;
+    scanf("%d",&n);
+    temp=n*n;
+    ans=(floor(log10(temp)+1))/2;
+    p=pow(10,ans);
+    r=temp%p;
+    q=temp/p;
+    fans=r+q;
+   if(n==fans)
+       printf("Kaprekar Number");
+    else
+        printf("Not a Kaprekar Number");
+    return 0;
+}
