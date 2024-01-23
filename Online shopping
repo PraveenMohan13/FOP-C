@@ -71,3 +71,28 @@ int main() {
        
     return 0;
 }
+==================================================================
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int fp,fd,fs,sp,sd,ss,ap,ad,as;
+    scanf("%d%d%d%d%d%d%d%d%d",&fp,&fd,&fs,&sp,&sd,&ss,&ap,&ad,&as);
+    int fans=fp-(fp*(fd/100.0))+fs;
+    int sans=sp-(sp*(sd/100.0))+ss;
+    int aans=ap-(ap*(ad/100.0))+as;
+    printf("In Flipkart: Rs.%d\n",fans);
+    printf("In Snapdeal: Rs.%d\n",sans);
+    printf("In Amazon: Rs.%d\n",aans);
+    if((fans<=aans)&&(fans<=sans))
+        printf("Choose Flipkart");
+    else if(sans<=fans&&sans<=aans)
+        printf("Choose Snapdeal");
+    else
+        printf("Choose Amazon");
+    
+       
+    return 0;
+}
