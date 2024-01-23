@@ -1,0 +1,56 @@
+Description
+
+Given two strings s and t, return 1 if s is a subsequence of t, or 0 otherwise.
+
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "abe" is a subsequence of "abcde" while "aed" is not).
+
+Input Format
+
+Two strings t and s in order.
+
+
+
+Output Format
+
+A single integer(1 or 0)
+
+
+
+Sample Input 0
+
+abcde
+
+abe
+
+
+
+Sample Output 0
+
+﻿1
+========================================================================
+#include <stdio.h>
+int main()
+{
+   char a[10];
+  char b[10];
+  scanf("%s",&a);
+  scanf("%s",&b);
+  int s1=strlen(a);
+  int s2=strlen(b);
+  int i=0,j=0;
+  while(i<s1 && j < s2)
+  {
+    if(a[i]==b[j])
+    {
+      i++,j++;
+    }
+    else
+    	i++;
+  }
+  
+  if(j>=s2)
+   printf("1");
+  else
+    printf("0");
+   return 0;
+}
