@@ -1,0 +1,56 @@
+
+Description
+
+An online test was conducted for the students for taking up a new course. In the test, the students will be provided with two words. They need to remove the characters in the second word which is present in the first word and have to type the rest. Write a program to remove all characters in the second string which are present in the first string
+
+
+
+Input Format
+
+Input consists of two strings.
+
+
+
+Output Format
+
+The output consists of one string.
+
+
+
+Sample Input 0
+
+Motor
+
+Motorcycle
+
+
+
+Sample Output 0
+
+cycle
+
+
+
+Explanation
+
+﻿The characters which are not present in the first string but present in the second string are a cycle and hence the output is cycle.
+=================================================
+#include <stdio.h>
+int main()
+{
+   char a[50];
+   char b[50];
+  scanf("%s%s",&a,&b);
+  int f=0;
+  for(int i=0;i<strlen(b);i++)
+  { f=0;
+    for(int j=0;j<strlen(a);j++)
+    {
+      if(b[i]==a[j])
+        f=1;
+    }
+   if(f==0)
+     printf("%c",b[i]);
+  }
+   return 0;
+}
