@@ -1,0 +1,95 @@
+Description
+
+In the city of Toyland, there are N houses. Noddy is looking for a piece of land in the city to build his house. All the houses in the city lie in a straight line and all of them are given a house number and position of the house from the entry point of the city. Noddy wants to find the house numbers between which he can build the largest house. Write an algorithm to help Noddy to find the house numbers between which he can build his house.
+
+Hint: No two houses will have the same position in case of multiple such answers, print the one with the least distance from the reference point.
+
+
+
+Input Format
+
+The first line of the input consists of an integer num, representing the number of houses (N). The next N lines consist of two space-separated integers – house Num and pos, representing the house number and the position of the houses.
+
+
+
+Constraints
+
+2 < num < 10^6
+1 < house Num < num
+0 < pos < 10^6
+
+
+Output Format
+
+Print two space-separated integers representing the house numbers in ascending order between which the largest plot is available.
+
+
+
+Sample Input
+
+5
+
+3 7
+
+1 9
+
+2 0
+
+5 15
+
+4 30
+
+
+
+Sample Output
+
+4 5
+
+
+
+============================================================================================================================================
+#include <stdio.h>
+void swap(int a[],int b[],int n)
+{
+  for(int i=0;i<n;i++)
+    {
+      for(int j=i+1;j<n;j++)
+      {
+        if(b[i]>b[j])
+        {
+          int t=a[i];
+          a[i]=a[j];
+          a[j]=t;
+          t=b[i];
+          b[i]=b[j];
+          b[j]=t;
+        }
+      }
+    }
+}
+int main()
+{
+   int n,x,y;
+  scanf("%d",&n);
+  int a[n],b[n];
+  for(int i=0;i<n;i++)
+  {
+    scanf("%d%d",&a[i],&b[i]);
+  }
+   swap(a,b,n);
+  int max=0;
+  for(int i=0;i<n-1;i++)
+  {
+    if(b[i+1]-b[i]>max)
+    {
+      max=b[i+1]-b[i];
+      x=a[i];
+     y=a[i+1];
+    }
+  }
+  if(x<y)
+    printf("%d %d",x,y);
+  else
+    printf("%d %d",y,x);
+   return 0;
+}
