@@ -1,0 +1,45 @@
+Description
+
+Write a program to compute the GCD of 2 numbers using recursion.
+
+
+
+Input Format
+
+Input consists of 2 integers.
+
+
+
+Output Format
+
+Output consists of one integer that represents the GCD of two numbers.
+
+
+
+Sample Input 1
+
+36
+
+27
+
+
+
+Sample Output 0
+
+9
+=============================================================================================================
+#include <stdio.h>
+int fun(int a,int b)
+{
+  if(a==0)
+    return b;
+  return fun(b%a,a);
+}
+int main()
+{
+  int a,b;
+  scanf("%d%d",&a,&b);
+  
+   printf("%d",fun(a,b));
+   return 0;
+}
