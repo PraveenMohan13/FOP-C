@@ -1,0 +1,64 @@
+Description
+
+A magic square is an arrangement of numbers (usually integers) in a square grid, there are numbers in the forward and backward main diagonals, all add up to the same number. Write a program to find whether a given matrix is a magic square or not.
+
+
+
+Input Format
+
+The input consists of (n*n+1) integers.
+The first integer corresponds to the number of rows/columns in the matrix.
+The remaining integers correspond to the elements in the matrix.
+The elements are read in row-wise order, the first row first, then the second row, and so on.
+
+
+Output Format
+
+Print yes if it is a magic square.
+Print no if it is not a magic square.
+
+
+Sample Input 1
+
+2
+
+4 5
+
+5 4
+
+
+
+Sample Output 1
+
+No
+======================================================================================================================================
+#include <stdio.h>
+int main()
+{
+   int n,s1=0,s2=0;
+  scanf("%d",&n);
+  int a[n][n];
+  for(int i=0;i<n;i++)
+  {
+    for(int j=0;j<n;j++)
+    {
+      scanf("%d",&a[i][j]);
+    }
+  }
+  
+  for(int i=0;i<n;i++)
+  {
+    for(int j=0;j<n;j++)
+    {
+      if(i==j)
+        s1 += a[i][j];
+      if(i+j==n-1)
+        s2 += a[i][j];
+    }
+  }
+  if(s1==s2)
+   printf("Yes");
+  else
+    printf("No");
+   return 0;
+}
