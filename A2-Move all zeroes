@@ -1,0 +1,130 @@
+Description
+
+Write a program to move all zeroes to the end of a given integer.
+
+
+
+Input Format
+
+The first line of input contains a number of test cases T.
+For each test case, the first line of input contains a single integer of 0's and 1's.
+
+
+Constraints
+
+1 ≤ T ≤ 10
+1 ≤ N ≤ 109
+
+
+Output Format
+
+The output contains a single-line integer value.
+
+
+
+Sample Input
+
+2
+
+1010101
+
+1000111
+
+
+
+Sample Output
+
+1111000
+
+1111000
+===================================================NORMAL PRINT:========================================================
+
+#include <stdio.h>
+void fun(int n)
+{
+  int c=0;
+  while(n)
+  {
+    if(n%10==1)
+      printf("%d",n%10);
+    else
+      c++;
+    n=n/10;
+  }
+ for(int i=0;i<c;i++)
+   printf("0");
+ printf("\n");
+}
+int main()
+{
+   int t,n;
+  scanf("%d",&t);
+  while(t)
+  {
+    scanf("%d",&n);
+    fun(n);
+    t--;
+  }
+   return 0;
+}
+====================================================Print Like Array====================================================================
+
+#include <stdio.h>
+void fun(int n)
+{
+  int c=floor(log10(n))+1;
+  int a[c];
+  int l=0;
+  int r=c-1;
+  while(n)
+  {
+    if(n%10==1)
+      a[l++]=1;
+    else
+      a[r--]=0;
+    n=n/10;
+  }
+ for(int i=0;i<c;i++)
+   printf("%d",a[i]);
+ printf("\n");
+}
+int main()
+{
+   int t,n;
+  scanf("%d",&t);
+  while(t)
+  {
+    scanf("%d",&n);
+    fun(n);
+    t--;
+  }
+   return 0;
+}
+=============================================Print like integer============================================================
+#include <stdio.h>
+void fun(int n)
+{
+  int c=0,ans=0;
+  while(n)
+  {
+    if(n%10==1)
+      ans = ans*10+1;
+    else
+      c++;
+    n=n/10;
+  }
+  ans = ans * pow(10,c);
+ printf("%d\n",ans);
+}
+int main()
+{
+   int t,n;
+  scanf("%d",&t);
+  while(t)
+  {
+    scanf("%d",&n);
+    fun(n);
+    t--;
+  }
+   return 0;
+}
