@@ -1,0 +1,89 @@
+Description
+
+Ram has a fruit shop. He has arranged some set of fruits in the column and row-wise. Ram needs to find which row and column have a maximum number of fruits. Help him to find out.
+
+
+
+Input Format
+
+Input consists of 2 integers(size of rows and columns) and 1 2D array.
+
+
+
+Output Format
+
+The output prints the sum of all rows and columns as well as print the row and column which has the maximum sum. Refer to the sample output.
+
+
+
+Sample Input 1
+
+3
+
+3
+
+1 6 8
+
+2 5 1
+
+3 8 2
+
+
+
+Sample Output 1
+
+The Sum of rows is 15 8 13
+
+Row 1 has a maximum sum
+
+The Sum of columns is 6 19 11
+
+Column 2 has the maximum sum
+===========================================================================================================
+#include <stdio.h>
+int main()
+{
+   int n,m,sum=0,max=0,f=0;
+  scanf("%d%d",&n,&m);
+  int a[n][n];
+  for(int i=0;i<n;i++)
+  {
+    for(int j=0;j<m;j++)
+    {
+      scanf("%d",&a[i][j]);
+    }
+  }
+  printf("The Sum of rows is ");  //row
+  for(int i=0;i<n;i++)
+  { sum=0;
+    for(int j=0;j<m;j++)
+    {
+      sum += a[i][j];
+    }
+    printf("%d ",sum);
+   if(sum > max)
+   {
+     max=sum;
+     f=i+1;
+   }
+  }
+  printf("\nRow %d has a maximum sum",f);
+  //col
+    printf("\nThe Sum of columns is ");
+  max=0;
+  for(int i=0;i<n;i++)
+  { sum=0;
+    for(int j=0;j<m;j++)
+    {
+      sum += a[j][i];
+    }
+    printf("%d ",sum);
+   if(sum > max)
+   {
+     max=sum;
+     f=i+1;
+   }
+  }
+  printf("\nColumn %d has the maximum sum",f);
+   return 0;
+}
